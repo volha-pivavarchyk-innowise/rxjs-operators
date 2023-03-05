@@ -38,7 +38,7 @@ export class CombinationComponent {
   task1() {
     this.arrayTask1 = [];
 
-    const streams$ = combineLatest([
+    combineLatest([
       // @ts-ignore
       this.intervalStream1$.pipe(
         skipUntil(
@@ -51,55 +51,48 @@ export class CombinationComponent {
       this.intervalStream2$.pipe(skipUntil( this.intervalStream1$.pipe(take(1)),  this.intervalStream3$.pipe(take(1)))),
       // @ts-ignore
       this.intervalStream3$.pipe(skipUntil(this.intervalStream1$.pipe(take(1)), this.intervalStream2$.pipe(take(1)))),
-    ]);
-
-    streams$
-      .pipe(
-        map(([val1, val2, val3]) => [val1, val2, val3])
-      )
-      .subscribe(
-        (value) => {
-          console.log(value);
-          // @ts-ignore
-          this.arrayTask1.push(value);
-        }
-      );
+    ])
+    .subscribe(
+      (value) => {
+        console.log(value);
+        // @ts-ignore
+        this.arrayTask1.push(value);
+      }
+    );
   }
 
   task2() {
     this.arrayTask2 = [];
 
-    const streams$ = combineLatest([
+    combineLatest([
       // @ts-ignore
       this.intervalStream1$.pipe(takeLast(1)),
       // @ts-ignore
       this.intervalStream2$.pipe(takeLast(1)),
       // @ts-ignore
       this.intervalStream3$.pipe(takeLast(1)),
-    ]);
-
-    streams$
-      .subscribe(
-        (value) => {
-          console.log(value);
-          // @ts-ignore
-          this.arrayTask2.push(value);
-        }
-      );
+    ])
+    .subscribe(
+      (value) => {
+        console.log(value);
+        // @ts-ignore
+        this.arrayTask2.push(value);
+      }
+    );
   }
 
   task3() {
     this.arrayTask3 = [];
 
     // @ts-ignore
-    combineLatest(
+    combineLatest([
       // @ts-ignore
       this.intervalStream1$,
       // @ts-ignore
       this.intervalStream2$,
       // @ts-ignore
       this.intervalStream3$,
-    )
+    ])
       // @ts-ignore
     .subscribe(([timerValOne, timerValTwo, timerValThree]) => {
       console.log(timerValOne, timerValTwo, timerValThree);
