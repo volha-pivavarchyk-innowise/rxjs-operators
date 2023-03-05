@@ -1,0 +1,20 @@
+<div class="block-combination">
+  <button class="card" (click)="onClick($event)" id="task-1">Task 1</button>
+  <ul>
+    <li *ngFor="let elem of arrayTask1; let idx = index">
+      {{idx+1}}. <strong>{{elem}}</strong>
+    </li>
+  </ul>
+  <button class="card" (click)="onClick($event)" id="task-2">Task 2</button>
+  <ul>
+    <li *ngFor="let elem of arrayTask2; let idx = index">
+      {{idx+1}}. <strong>{{elem}}</strong>
+    </li>
+  </ul>
+  <button class="card" (click)="onClick($event)" id="task-3">Task 3</button>
+  <ul>
+    <li *ngFor="let elem of arrayTask3; let idx = index">
+      {{idx+1}}. <strong>{{elem}}</strong>
+    </li>
+  </ul>
+</div>
