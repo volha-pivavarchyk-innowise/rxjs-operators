@@ -1,0 +1,26 @@
+<div class="block">
+  <button class="card" (click)="onClick($event)" id="task-1">Task 1. A delay of 200 milliseconds: map</button>
+  <ul>
+    <li *ngFor="let elem of arrayTask1; let idx = index">
+      {{idx+1}}. <strong>{{elem}}</strong>
+    </li>
+  </ul>
+  <button class="card" (click)="onClick($event)" id="task-2">Task 2. Items from stream 1 as a new stream.</button>
+  <ul>
+    <li *ngFor="let elem of arrayTask2; let idx = index">
+      {{idx+1}}. <strong>{{elem}}</strong>
+    </li>
+  </ul>
+  <button class="card" (click)="onClick($event)" id="task-3">Task 3. Output each Odd element of the first stream 5 times.</button>
+  <ul>
+    <li *ngFor="let elem of arrayTask3; let idx = index">
+      {{idx+1}}. <strong>{{elem}}</strong>
+    </li>
+  </ul>
+  <button class="card" (click)="onClick($event)" id="task-4">Task 4. Items from stream 1 as a new stream.</button>
+  <ul>
+    <li *ngFor="let elem of arrayTask4; let idx = index">
+      {{idx+1}}. <strong>{{elem}}</strong>
+    </li>
+  </ul>
+</div>

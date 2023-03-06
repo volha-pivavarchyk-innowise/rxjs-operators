@@ -1,0 +1,20 @@
+<div class="block">
+  <button class="card" (click)="onClick($event)" id="multiply-by-3">Task 1. Multiply by 3</button>
+  <ul>
+    <li *ngFor="let elem of arrayMultiplyBy3; let idx = index">
+      {{idx+1}}. <strong>{{elem}}</strong>
+    </li>
+  </ul>
+  <button class="card" (click)="onClick($event)" id="take-first-7">Task 2. Take First 7: take</button>
+  <ul>
+    <li *ngFor="let elem of arrayFirst7; let idx = index">
+      {{idx+1}}. <strong>{{elem}}</strong>
+    </li>
+  </ul>
+  <button class="card" (click)="onClick($event)" id="take-even-numbers">Task 3. Take Even Numbers: filter</button>
+  <ul>
+    <li *ngFor="let elem of arrayEvenNumbers; let idx = index">
+      {{idx+1}}. <strong>{{elem}}</strong>
+    </li>
+  </ul>
+</div>
